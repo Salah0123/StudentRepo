@@ -17,7 +17,7 @@ namespace Student.Application.Services
             var student = await _context.Students.SingleOrDefaultAsync(x => x.Id == id, cancellationToken);
             if (student is null)
                 return null;
-            var familyMembers = await _context.FamilyMembers.Include(x=>x.Relationship).Where(x=>x.StudentId == id).ToListAsync(cancellationToken);
+            var familyMembers = await _context.FamilyMembers.Include(x=>x.Relationship).Include(x=>x.Nationality).Where(x=>x.StudentId == id).ToListAsync(cancellationToken);
 
             return familyMembers.Adapt<IEnumerable<FamilyResponse>>();
         }

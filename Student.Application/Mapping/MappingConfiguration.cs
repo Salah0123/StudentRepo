@@ -1,4 +1,5 @@
 ﻿using Mapster;
+using Student.Domain.Contracts.Nationalities;
 using Student.Domain.Contracts.Students;
 using Student.Domain.Entities;
 
@@ -14,6 +15,9 @@ namespace Student.Application.Mapping
 
             config.NewConfig<FamilyMember, FamilyResponse>()
                 .Map(dest => dest.Relationship, src => src.Relationship.Name);
+
+            config.NewConfig<FamilyMember, FamilyResponse>()
+                .Map(dest => dest.Nationality, src => src.Nationality.Name);
         }
     }
 }
