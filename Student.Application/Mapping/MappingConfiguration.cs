@@ -14,9 +14,7 @@ namespace Student.Application.Mapping
                 .Map(dest => dest.Familys, src => src.FamilyMembers);
 
             config.NewConfig<FamilyMember, FamilyResponse>()
-                .Map(dest => dest.Relationship, src => src.Relationship.Name);
-
-            config.NewConfig<FamilyMember, FamilyResponse>()
+                .Map(dest => dest.Relationship, src => src.Relationship.Name)
                 .Map(dest => dest.Nationality, src => src.Nationality.Name);
         }
     }

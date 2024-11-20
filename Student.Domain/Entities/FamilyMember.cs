@@ -15,7 +15,7 @@ namespace Student.Domain.Entities
         public int RelationshipId { get; set; }
         public Relationship Relationship { get; set; } = default!;
 
-        public int NationalityId { get; set; }
+        public int? NationalityId { get; set; }
         public Nationality Nationality { get; set; } = default!;
     }
 }

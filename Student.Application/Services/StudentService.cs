@@ -16,7 +16,8 @@ namespace Student.Application.Services
                 .Include(x=>x.Nationality)
                 .Include(x=>x.FamilyMembers)
                 .ThenInclude(x=>x.Relationship)
-                //.ThenInclude(x=>x.Nationality)
+                .Include(x => x.FamilyMembers)
+                .ThenInclude(x => x.Nationality)
                 .ToListAsync(cancellationToken);
             return students.Adapt<IEnumerable<StudentResponse>>();
         }

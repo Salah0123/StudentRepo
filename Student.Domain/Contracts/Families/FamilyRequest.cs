@@ -10,6 +10,7 @@ namespace Student.Domain.Contracts.Families
         public string LastName { get; set; } = string.Empty;
         public DateTime DateOfBirth { get; set; }
         public int? FamilyId { get; set; }
+        public int? NationalityId { get; set; }
         public int RelationshipId { get; set; }
     }
 }
